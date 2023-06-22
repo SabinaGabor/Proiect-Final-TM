@@ -229,7 +229,7 @@ This test plan will include test cases that will analyze the Job chapter of the 
   ![24.04.2023.4](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Daily-25.04.2023.4.png)
 
 #### 3.4	  Test case results
-- [Test cases results](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Test%20case%20results.xlsx)
+[Test cases results](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Test%20case%20results.xlsx)
 ![Test case results 1](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Results.1.png)
 ![Test case results 2](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Results.2.png)
 ![Test case results 3](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Results.3.png)
@@ -286,4 +286,10 @@ This test plan will include test cases that will analyze the Job chapter of the 
 - A subunit can't be deleted as specified in the business requirements:
 ![Bug11.1](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Bug11.1.png)
 ![Bug11.2](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Bug11.2.png)
+
+#### 3.6	  Test completion report
+![Test completion report](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Test%20Compleston%20Report.png)
+
+#### 3.7	  API Test Cases
+- [API Tests](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Gabor%20Sabina%20Proiect%20final.postman_collection.json)
 
