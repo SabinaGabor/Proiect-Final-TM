@@ -148,7 +148,7 @@ Verify that the following elements are ready before the test execution phase:
 
 #### 2.7. Test monitoring and control
 -	Generate periodic reports to check the project status: status for the test cases executed, status for the converge of the business requirements, etc 
-
+-  [Test Execution Report](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Test%20Execution%20Report.pdf)
 
 ### 3.	Test deliverables
 
