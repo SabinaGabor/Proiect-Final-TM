@@ -1,0 +1,1007 @@
+{
+	"info": {
+		"_postman_id": "e5cba9d2-a8b7-4529-8994-0e039aa0e77e",
+		"name": "Proiect final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetBooks Status",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify if the response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify if the status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var response = pm.response.json();\r",
+							"pm.test(\"Verify if the status is OK\", function(){\r",
+							"    pm.expect(response.status).to.eql(\"OK\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{SimpleBooks}}/status",
+					"host": [
+						"{{SimpleBooks}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBooks",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify if the response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify if the status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that the result for the first book are correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].id).to.eql(1);\r",
+							"    pm.expect(jsonData[0].name).to.eql(\"The Russian\",);\r",
+							"    pm.expect(jsonData[0].type).to.eql(\"fiction\",);\r",
+							"    pm.expect(jsonData[0].available).to.eql(true,);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that the result for the second book are correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[1].id).to.eql(2);\r",
+							"    pm.expect(jsonData[1].name).to.eql(\"Just as I Am\",);\r",
+							"    console.log(\"Numele celei de a doua carti:\",jsonData[1].name);\r",
+							"    pm.expect(jsonData[1].type).to.eql(\"non-fiction\",);\r",
+							"    pm.expect(jsonData[1].available).to.eql(false,);\r",
+							"    console.log(\"Disponibilitatea cartii:\",jsonData[1].available);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that the result for the 3rd book are correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[2].id).to.eql(3);\r",
+							"    pm.expect(jsonData[2].name).to.eql(\"The Vanishing Half\",);\r",
+							"    pm.expect(jsonData[2].type).to.eql(\"fiction\",);\r",
+							"    pm.expect(jsonData[2].available).to.eql(true,);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that the result for the 4th book are correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[3].id).to.eql(4);\r",
+							"    pm.expect(jsonData[3].name).to.eql(\"The Midnight Library\",);\r",
+							"    pm.expect(jsonData[3].type).to.eql(\"fiction\",);\r",
+							"    pm.expect(jsonData[3].available).to.eql(true,);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that the result for the 5th book are correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[4].id).to.eql(5);\r",
+							"    pm.expect(jsonData[4].name).to.eql(\"Untamed\",);\r",
+							"    pm.expect(jsonData[4].type).to.eql(\"non-fiction\",);\r",
+							"    pm.expect(jsonData[4].available).to.eql(true,);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that the result for the 6th book are correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[5].id).to.eql(6);\r",
+							"    pm.expect(jsonData[5].name).to.eql(\"Viscount Who Loved Me\",);\r",
+							"    pm.expect(jsonData[5].type).to.eql(\"fiction\",);\r",
+							"    pm.expect(jsonData[5].available).to.eql(true,);\r",
+							"});\r",
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.test(\"Verify that the total number of books is \" + jsonData.length, function () {\r",
+							"    pm.expect(jsonData.length).to.eql(6);\r",
+							"    console.log(\"Numarul total de carti:\", jsonData.length)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that total number of books with type fiction is 4\", function () {\r",
+							"var raspuns = pm.response.json();\r",
+							"var countBooks = 0;\r",
+							"for (var i = 0; i < pm.response.json().length; i++) {\r",
+							"        if (pm.response.json()[i].type == 'fiction') {\r",
+							"            console.log(pm.response.json()[i].name);\r",
+							"            countBooks++;\r",
+							"        }\r",
+							"    }\r",
+							"    console.log(countBooks);\r",
+							"    pm.expect(countBooks).to.eql(4);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Log the total number of fiction books\", function () {\r",
+							"var raspuns = pm.response.json();\r",
+							"var countBooks = 0;\r",
+							"for (var i = 0; i < pm.response.json().length; i++) {\r",
+							"        if (pm.response.json()[i].type == 'fiction') {\r",
+							"         \r",
+							"            countBooks++;\r",
+							"        }\r",
+							"    }\r",
+							"    console.log(\"The total number og fiction books is\", countBooks);\r",
+							"    \r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that total number of books with type non-fiction is 2\", function () {\r",
+							"var raspuns = pm.response.json();\r",
+							"var countBooks = 0;\r",
+							"for (var i = 0; i < pm.response.json().length; i++) {\r",
+							"        if (pm.response.json()[i].type == 'non-fiction') {\r",
+							"            console.log(pm.response.json()[i].name);\r",
+							"            countBooks++;\r",
+							"        }\r",
+							"    }\r",
+							"    console.log(countBooks);\r",
+							"    pm.expect(countBooks).to.eql(2);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that total number of availabe books is 5\", function () {\r",
+							"var raspuns = pm.response.json();\r",
+							"var countBooks = 0;\r",
+							"for (var i = 0; i < pm.response.json().length; i++) {\r",
+							"        if (pm.response.json()[i].available == true) {\r",
+							"            console.log(pm.response.json()[i].available);\r",
+							"            countBooks++;\r",
+							"        }\r",
+							"    }\r",
+							"    console.log(countBooks);\r",
+							"    pm.expect(countBooks).to.eql(5);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that total number of unavailabe books is 1\" , function () {\r",
+							"var raspuns = pm.response.json();\r",
+							"var countBooks = 0;\r",
+							"for (var i = 0; i < pm.response.json().length; i++) {\r",
+							"        if (pm.response.json()[i].available == false) {\r",
+							"            console.log(pm.response.json()[i].available);\r",
+							"            countBooks++;\r",
+							"        }\r",
+							"    }\r",
+							"    console.log(countBooks);\r",
+							"    pm.expect(countBooks).to.eql(1);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response contains field available\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"available\");\r",
+							"})\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{SimpleBooks}}/books",
+					"host": [
+						"{{SimpleBooks}}"
+					],
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBooks - Filter by type fiction",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Check that the status code is correct\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response contains ID\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+							"});\r",
+							"\r",
+							"var data = pm.response.json();\r",
+							"pm.test(\"Number of books = \" + data.length,  function () {\r",
+							"    pm.expect(data.length).to.eql(4);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that the result for the first book are correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].id).to.eql(1);\r",
+							"    pm.expect(jsonData[0].name).to.eql(\"The Russian\",);\r",
+							"    pm.expect(jsonData[0].type).to.eql(\"fiction\",);\r",
+							"    pm.expect(jsonData[0].available).to.eql(true,);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that the result for the second book are correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[1].id).to.eql(3);\r",
+							"    pm.expect(jsonData[1].name).to.eql(\"The Vanishing Half\",);\r",
+							"    pm.expect(jsonData[1].type).to.eql(\"fiction\",);\r",
+							"    pm.expect(jsonData[1].available).to.eql(true,);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that the result for the 3rd book are correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[2].id).to.eql(4);\r",
+							"    pm.expect(jsonData[2].name).to.eql(\"The Midnight Library\",);\r",
+							"    pm.expect(jsonData[2].type).to.eql(\"fiction\",);\r",
+							"    pm.expect(jsonData[2].available).to.eql(true,);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that the result for the 4th book are correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[3].id).to.eql(6);\r",
+							"    pm.expect(jsonData[3].name).to.eql(\"Viscount Who Loved Me\");\r",
+							"    pm.expect(jsonData[3].type).to.eql(\"fiction\",);\r",
+							"    pm.expect(jsonData[3].available).to.eql(true,);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "e769df4bf6ec016c883e37be8c1c106b3c1e72c4ef977c1a8f811026c525cd1e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{SimpleBooks}}/books?type=fiction&limit=5",
+					"host": [
+						"{{SimpleBooks}}"
+					],
+					"path": [
+						"books"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "fiction"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBooks - Filter by type non-fiction",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Check that the status code is correct\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response contains ID\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+							"});\r",
+							"\r",
+							"var data = pm.response.json();\r",
+							"pm.test(\"Number of books = \" + data.length,  function () {\r",
+							"    pm.expect(data.length).to.eql(2);\r",
+							"});\r",
+							"\r",
+							"var data = pm.response.json();\r",
+							"pm.test(\"Number of books is smaller than 6 \",  function () {\r",
+							"    pm.expect(data.length).to.be.below(6);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that the result for the first book are correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].id).to.eql(2);\r",
+							"    pm.expect(jsonData[0].name).to.eql(\"Just as I Am\",);\r",
+							"    pm.expect(jsonData[0].type).to.eql(\"non-fiction\",);\r",
+							"    pm.expect(jsonData[0].available).to.eql(false,);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that the result for the second book are correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[1].id).to.eql(5);\r",
+							"    pm.expect(jsonData[1].name).to.eql(\"Untamed\",);\r",
+							"    pm.expect(jsonData[1].type).to.eql(\"non-fiction\",);\r",
+							"    pm.expect(jsonData[1].available).to.eql(true,);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"var response = pm.response.json();\r",
+							"var nonFiction = response.filter((book) => book.available === true);\r",
+							"var book = nonFiction[0];\r",
+							"pm.test(\"Available book is named Untamed\", function () {\r",
+							"    pm.expect(book.available).to.be.true;\r",
+							"    pm.expect(book.available).to.eql(true);\r",
+							"});\r",
+							"\r",
+							"var response = pm.response.json();\r",
+							"var nonFiction = response.filter((book) => book.available === false);\r",
+							"var book = nonFiction[0];\r",
+							"pm.test(\"Available book is named Just as I Am\", function () {\r",
+							"    pm.expect(book.available).to.be.false;\r",
+							"    pm.expect(book.available).to.eql(false);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "e769df4bf6ec016c883e37be8c1c106b3c1e72c4ef977c1a8f811026c525cd1e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{SimpleBooks}}/books?type=non-fiction&limit=5",
+					"host": [
+						"{{SimpleBooks}}"
+					],
+					"path": [
+						"books"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "non-fiction"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBooks - Filter by invalide type",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Check that the status code is correct\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response returns error\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"error\");\r",
+							"});\r",
+							"\r",
+							"var responseData = pm.response.json();\r",
+							"pm.test(\"Response returns correct error message\",  function () {\r",
+							"    pm.expect(responseData.error).to.eql(\"Invalid value for query parameter 'type'. Must be one of: fiction, non-fiction.\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "e769df4bf6ec016c883e37be8c1c106b3c1e72c4ef977c1a8f811026c525cd1e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{SimpleBooks}}/books?type=invalide",
+					"host": [
+						"{{SimpleBooks}}"
+					],
+					"path": [
+						"books"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "invalide"
+						},
+						{
+							"key": "limit",
+							"value": "5",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostOrder Invalid Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify that the server will return 401 if the token is incorrect \", function () {\r",
+							"    pm.response.to.have.status(401);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that the server will return unauthorized if the token is incorrect \", function () {\r",
+							"    pm.expect(pm.response.status).to.eql(\"Unauthorized\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that the response returns error \", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"error\", \"Invalid bearer token.\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "e769df4bf6ec016c883e37be8c1c10b3c1e72c4ef977c1a8f811026c525cd1e",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"bookId\": 1,\r\n  \"customerName\": \"John\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{SimpleBooks}}/orders",
+					"host": [
+						"{{SimpleBooks}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostOrder Authorization",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify if the status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify if the new order is created\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.created).to.eql(true);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify if the status is correct\", function () {\r",
+							"    pm.response.to.have.status(\"Created\");\r",
+							"});\r",
+							"\r",
+							"var response = pm.response.json();\r",
+							"pm.globals.set(\"orderId\", response.orderId);\r",
+							"\r",
+							"var responseData = pm.response.json();\r",
+							"pm.test(\"Verify that a variable is not null\", () => {\r",
+							"    pm.expect(responseData.orderId).not.eql(null);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify if the orderId is present\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"orderId\");\r",
+							"});\r",
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.test([\"Check that the order id is correct \" + jsonData.orderId], function (){\r",
+							"    pm.environment.set(jsonData.orderId);\r",
+							"    console.log(jsonData.orderId)\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "e2743ddb7e1ef45f42fe37a093b94909d5e2083465cdb82f849b8f1c3f5ec54d",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"bookId\": 3,\r\n  \"customerName\": \"Maria\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{SimpleBooks}}/orders",
+					"host": [
+						"{{SimpleBooks}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all orders",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify if the response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify if the status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"pm.test(\"Verify that the total number of orders is \" + jsonData.length, function () {\r",
+							"    pm.expect(jsonData.length).to.eql(jsonData.length);\r",
+							"    console.log(\"Numarul total de carti:\", jsonData.length)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that the result for the first order are correct \", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].id).to.eql(\"qeFxc3u_YJFegZD8fPMMs\",);\r",
+							"    pm.expect(jsonData[0].bookId).to.eql(1,);\r",
+							"    pm.expect(jsonData[0].customerName).to.eql(\"John\",);\r",
+							"    pm.expect(jsonData[0].createdBy).to.eql(\"2b490c31c873a62186f5c8448bd3c0eb5d1f4d3e4a395f439fabd71aabd8ee63\",);\r",
+							"    pm.expect(jsonData[0].quantity).to.eql(1,);\r",
+							"    pm.expect(jsonData[0].timestamp).to.eql(1685957211694,);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that the result for the second order are correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[1].id).to.eql(\"IHfrw4Y0RCzKfoud55mse\",);\r",
+							"    pm.expect(jsonData[1].bookId).to.eql(3,);\r",
+							"    pm.expect(jsonData[1].customerName).to.eql(\"Maria\",);\r",
+							"    pm.expect(jsonData[1].createdBy).to.eql(\"2b490c31c873a62186f5c8448bd3c0eb5d1f4d3e4a395f439fabd71aabd8ee63\",);\r",
+							"    pm.expect(jsonData[1].quantity).to.eql(1,);\r",
+							"    pm.expect(jsonData[1].timestamp).to.eql(1685958711363,);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that the result for the 3rd order are correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[2].id).to.eql(\"w9YtqM6KWuJyPiC8RGBp0\",);\r",
+							"    pm.expect(jsonData[2].bookId).to.eql(3,);\r",
+							"    pm.expect(jsonData[2].customerName).to.eql(\"Ana\",);\r",
+							"    pm.expect(jsonData[2].createdBy).to.eql(\"2b490c31c873a62186f5c8448bd3c0eb5d1f4d3e4a395f439fabd71aabd8ee63\",);\r",
+							"    pm.expect(jsonData[2].quantity).to.eql(1,);\r",
+							"    pm.expect(jsonData[2].timestamp).to.eql(1685958725023,);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "e2743ddb7e1ef45f42fe37a093b94909d5e2083465cdb82f849b8f1c3f5ec54d",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{SimpleBooks}}/orders",
+					"host": [
+						"{{SimpleBooks}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get an order",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify if the response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify if the status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Verify that the id is: qeFxc3u_YJFegZD8fPMMs \", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.id).to.eql(\"qeFxc3u_YJFegZD8fPMMs\",);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that the bookId is 1\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.bookId).to.eql(1,);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that the customer name is John \", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.customerName).to.eql(\"John\",);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that the authorization is correct\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.createdBy).to.eql(\"2b490c31c873a62186f5c8448bd3c0eb5d1f4d3e4a395f439fabd71aabd8ee63\",);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify that the quantity is correct \", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.quantity).to.eql(1,);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "e2743ddb7e1ef45f42fe37a093b94909d5e2083465cdb82f849b8f1c3f5ec54d",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{SimpleBooks}}/orders/qeFxc3u_YJFegZD8fPMMs",
+					"host": [
+						"{{SimpleBooks}}"
+					],
+					"path": [
+						"orders",
+						"qeFxc3u_YJFegZD8fPMMs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PatchOrder",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify if the status code is 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify if the status is correct\", function () {\r",
+							"    pm.response.to.have.status(\"No Content\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "e2743ddb7e1ef45f42fe37a093b94909d5e2083465cdb82f849b8f1c3f5ec54d",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customerName\": \"Ana\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{SimpleBooks}}/orders/w9YtqM6KWuJyPiC8RGBp0",
+					"host": [
+						"{{SimpleBooks}}"
+					],
+					"path": [
+						"orders",
+						"w9YtqM6KWuJyPiC8RGBp0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete an Order",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify if the status code is 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify if the status is correct\", function () {\r",
+							"    pm.response.to.have.status(\"No Content\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "e2743ddb7e1ef45f42fe37a093b94909d5e2083465cdb82f849b8f1c3f5ec54d",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{SimpleBooks}}/orders/BPSfT9cLn6LJzpfLEMHf5",
+					"host": [
+						"{{SimpleBooks}}"
+					],
+					"path": [
+						"orders",
+						"BPSfT9cLn6LJzpfLEMHf5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SimpleBooks Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify if the status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify if the response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify if the status is correct\", function () {\r",
+							"    pm.response.to.have.status(\"Created\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "d7aadac38f01bf407345aa79ccba5ccc9ae5031a4955d32fd23982498bfdd939",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"clientName\": \"Postman\",\r\n   \"clientEmail\": \"sabina@sab.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{SimpleBooks}}/api-clients/",
+					"host": [
+						"{{SimpleBooks}}"
+					],
+					"path": [
+						"api-clients",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SimpleBooks Error Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verify if the status code is 409\", function () {\r",
+							"    pm.response.to.have.status(409);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify if the response time is less than 500ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify if the status is correct\", function () {\r",
+							"    pm.response.to.have.status(\"Conflict\");\r",
+							"});\r",
+							"\r",
+							"var response = pm.response.json();\r",
+							"pm.test(\"Verify if the error is correct\", function(){\r",
+							"    pm.expect(response.error).to.eql(\"API client already registered. Try a different email.\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "b9a4bca701151058e5139228dc37a1ce336a2c6a0fad628158efc9e9c6e3b7c7",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"clientName\": \"Postman\",\r\n   \"clientEmail\": \"sabina@exame.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{SimpleBooks}}/api-clients/",
+					"host": [
+						"{{SimpleBooks}}"
+					],
+					"path": [
+						"api-clients",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
