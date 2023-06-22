@@ -228,8 +228,15 @@ This test plan will include test cases that will analyze the Job chapter of the 
   ![24.04.2023.3](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Daily-25.04.2023.3.png)
   ![24.04.2023.4](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Daily-25.04.2023.4.png)
 
-
-
+#### 3.4	  Test case results
+- [Test cases results](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Test%20case%20results.xlsx)
+![Test case results 1](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Results.1.png)
+![Test case results 2](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Results.2.png)
+![Test case results 3](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Results.3.png)
+![Test case results 4](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Results.4.png)
+![Test case results 5](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Results.5.png)
+![Test case results 6](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Results.6.png)
+![Test case results 7](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Results.7.png)
 
 
 
