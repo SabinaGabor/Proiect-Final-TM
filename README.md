@@ -218,7 +218,15 @@ This test plan will include test cases that will analyze the Job chapter of the 
 - [Verify if you can delete Sub-Units](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Verify%20if%20you%20can%20delete%20Sub-Units.pdf)
 
 #### 3.3  Daily test summary report 
-
+- 24.04.2023
+  ![24.04.2023.1](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Daily-24.04.2023.1.png)
+  ![24.04.2023.2](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Daily-24.04.2023.2.png)
+  ![24.04.2023.3](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Daily-24.04.2023.3.png)
+- 25.04.2023
+  ![25.04.2023.1](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Daily-25.04.2023.1.png)
+  ![24.04.2023.2](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Daily-25.04.2023.2.png)
+  ![24.04.2023.3](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Daily-25.04.2023.3.png)
+  ![24.04.2023.4](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Daily-25.04.2023.4.png)
 
 
 
