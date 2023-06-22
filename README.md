@@ -238,5 +238,52 @@ This test plan will include test cases that will analyze the Job chapter of the 
 ![Test case results 6](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Results.6.png)
 ![Test case results 7](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Results.7.png)
 
+#### 3.5	  Bugs report
 
+- The details of the job title do not appear when click on its name.These are already present on the right side of the job title name:
+![Bug1.1](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Bug1.1.png)
+![Bug1.2](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Bug1.2.png)
+
+- The minimum and maximum salary can be 0:
+![Bug2.1](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Bug2.1.png)
+![Bug2.2](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Bug2.2.png)
+
+- The same value can't be entered in the minimum salary and maximum salary fields:
+![Bug3.1](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Bug3.1.png)
+![Bug3.2](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Bug3.2.png)
+
+- You can't edit an Employment Status by clicking on its name:
+![Bug4.1](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Bug4.1.png)
+![Bug4.2](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Bug4.2.png)
+
+- There are no details about Job Category:
+![Bug5.1](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Bug5.1.png)
+![Bug5.2](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Bug5.2.png)
+![Bug5.3](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Bug5.3.png)
+
+- The "Available Employees" field on the Add Work Shift page isn't present:
+![Bug6.1](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Bug6.1.png)
+![Bug6.2](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Bug6.2.png)
+
+- There wasn't "Employees Available" box and "Employees Allocated" box to be able to assign employees:
+![Bug7.1](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Bug7.1.png)
+![Bug7.2](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Bug7.2.png)
+
+- The "Phone" field can be completed by adding a single digit or a number greater than 10 digits:
+![Bug8.1](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Bug8.1.png)
+![Bug8.2](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Bug8.2.png)
+![Bug8.3](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Bug8.3.png)
+
+- You can complete the "Phone" field by adding a single digit or a number greater than 10 digits:
+![Bug9.1](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Bug9.1.png)
+![Bug9.2](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Bug9.2.png)
+![Bug9.3](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Bug9.3.png)
+
+- A subunit can't be added to the company structure on the path mentioned in the busniess requirements:
+![Bug10.1](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Bug10.1.png)
+![Bug10.2](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Bug10.2.png)
+
+- A subunit can't be deleted as specified in the business requirements:
+![Bug11.1](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Bug11.1.png)
+![Bug11.2](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Bug11.2.png)
 
