@@ -228,6 +228,10 @@ This test plan will include test cases that will analyze the Job chapter of the 
   ![24.04.2023.3](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Daily-25.04.2023.3.png)
   ![24.04.2023.4](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Daily-25.04.2023.4.png)
 
+#### 3.4 Traceability matrix
+[Traceability matrix](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Traceability%20matrix.xlsx)
+
+
 #### 3.4	  Test case results
 [Test cases results](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Test%20case%20results.xlsx)
 ![Test case results 1](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Results.1.png)
