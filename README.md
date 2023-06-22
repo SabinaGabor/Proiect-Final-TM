@@ -217,6 +217,7 @@ This test plan will include test cases that will analyze the Job chapter of the 
 - [Verify if you can collapse/expand the sub-units](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Verify%20if%20you%20can%20collapseexpand%20the%20sub-units.pdf)
 - [Verify if you can delete Sub-Units](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Verify%20if%20you%20can%20delete%20Sub-Units.pdf)
 
+#### 3.3  Daily test summary report 
 
 
 
