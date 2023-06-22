@@ -148,14 +148,18 @@ Verify that the following elements are ready before the test execution phase:
 
 #### 2.7. Test monitoring and control
 -	Generate periodic reports to check the project status: status for the test cases executed, status for the converge of the business requirements, etc 
--  ![Test Execution Report]([[https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Test%20Execution%20Report.pdf](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Test%20Execution%20Report.png)https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Test%20Execution%20Report.png](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Test%20Execution%20Report.png)https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Test%20Execution%20Report.png)
+   ![Test Execution Report](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Test%20Execution%20Report.png)
 
 ### 3.	Test deliverables
 
 #### 3.1.  Test plan
+This test plan will include test cases that will analyze the Job chapter of the OrangeHRM Website, the Job and Organization subsections, as well as API testing for SimpleBooks
 
+#### 3.2.  Test conditions and tastcases
+Jira:
+![Test Cases and Test Conditions.1](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Test%20Cases%20and%20Test%20Conditions.1.png)
+![Test Cases and Test Conditions.2](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Test%20Cases%20and%20Test%20Conditions.2.png)
 
-#### 3.2.  Test conditions
 
 
 
