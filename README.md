@@ -149,7 +149,11 @@ Verify that the following elements are ready before the test execution phase:
 
 #### 2.7. Test monitoring and control
 -	Generate periodic reports to check the project status: status for the test cases executed, status for the converge of the business requirements, etc 
-   ![Test Execution Report](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Test%20Execution%20Report.png)
+   ![24.04.2023.2](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Daily-24.04.2023.2.png)
+ 	[Test Execution Burndown Report for Cycle (Job)](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Test%20Execution%20Burndown%20Report%20for%20Cycle%20(JOB).png)
+ 	
+ 	[Test Execution Burndown Report for Cycle (Organization)](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Test%20Execution%20Burndown%20Report%20for%20Cycle%20(Organization).png)
+ 	
 
 ### 3.	Test deliverables
 
@@ -157,8 +161,14 @@ Verify that the following elements are ready before the test execution phase:
 This test plan will include test cases that will analyze the Job chapter of the OrangeHRM Website, the Job and Organization subsections, as well as API testing for SimpleBooks
 
 #### 3.2.  Test conditions and tast cases
-
-
+![Test condition 1](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Test%20condition%201.png)
+![Test condition 2](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Test%20condition%202.png)
+![Test condition 3](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Test%20condition%203.png)
+![Test condition 4](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Test%20condition%204.png)
+![Test condition 5](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Test%20condition%205.png)
+![Test condition 6](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Test%20condition%206.png)
+![Test condition 7](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Test%20condition%207.png)
+![Test condition 8](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Test%20condition%208.png)
 #### 3.3  Daily test summary report 
 - 24.04.2023
   ![24.04.2023.1](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Daily-24.04.2023.1.png)
