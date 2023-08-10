@@ -1,0 +1,11 @@
+﻿Summary,Issue key,Issue id,Issue Type,Status
+The details of the job title do not appear when click on its name.These are already present on the right side of the job title name,PF-62,10068,Bug,Done
+The minimum and maximum salary can be 0,PF-65,10071,Bug,Done
+The same value can't be entered in the minimum salary and maximum salary fields,PF-66,10072,Bug,Done
+You can't edit an Employment Status by clicking on its name,PF-67,10073,Bug,Done
+There are no details about Job Category,PF-68,10074,Bug,Done
+"The ""Available Employees"" field on the Add Work Shift page isn't present",PF-69,10075,Bug,Done
+"There wasn't  ""Employees Available"" box and ""Employees Allocated"" box to be able to assign employees",PF-70,10076,Bug,Done
+A subunit can't be added to the company structure on the path mentioned in the busniess requirements,PF-73,10079,Bug,Done
+A subunit can't be deleted as specified in the business requirements,PF-74,10080,Bug,Done
+The field Name from Add Job Title Category can be complete with number,PF-79,10087,Bug,Done
