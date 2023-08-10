@@ -182,7 +182,7 @@ This test plan will include test cases that will analyze the Job chapter of the 
 
 #### 3.4 Traceability matrix
 
-
+[Traceability matrix](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Traceability%20Matrix.xlsx)
 
 #### 3.4	  Test case results
 
