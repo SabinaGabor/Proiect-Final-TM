@@ -185,15 +185,16 @@ This test plan will include test cases that will analyze the Job chapter of the 
 [Traceability matrix](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Traceability%20Matrix.xlsx)
 
 #### 3.4	  Test case results
-
+![Test case results](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Test%20Cases%20Results.pdf)
 
 #### 3.5	  Bugs report
 
-
+![Bugs](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Bugs.pdf)
+![Bugs report](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Bugs%20report.csv)
 
 #### 3.6	  Test completion report
 
-
+[Test completion report](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Test%20Completion%20report.png)
 #### 3.7	  API Test Cases
 - [API Tests](https://github.com/SabinaGabor/Proiect-Final-TM/blob/main/Gabor%20Sabina%20Proiect%20final.postman_collection.json)
 
